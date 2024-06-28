@@ -110,3 +110,21 @@ all files bundle in dist folder - production Build files that is ready for produ
 - Production build is highly optimized Build that is ready fro production
 
 - dist & parcel-cache is a temporary file that is automatically generated [no need to put in github]
+
+Structure of Project --
+
+/*  * Header Component
+      - Logo
+      - Nav Items
+    * Body Component
+      - Search
+      - RestaurantContainer
+          - RestaurantCard
+            - Image
+            - Name of Res card, cuisine, delivery time
+    * Footer Component
+      - Copyright
+      - Links
+      - Address
+      - Contact
+ */

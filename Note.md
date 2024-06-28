@@ -106,3 +106,94 @@ in package.json -
    - JSX won't run blindly run first it'll check then data will display in dashboard
    - nobody can malicious attach, JSX prevent
    <title /> or <title></title> or {title()} all the same things
+
+  
+# Lecture - 04 -
+  - Food Ordering App -
+    - Thing as a Panning [UI Design, writting code for it]
+      (Swiggy & Zomato)
+      
+- ## Planning our Application
+<!-- ## Header Component
+      - Logo
+      - Nav Items
+    ## Body Component
+      - Search
+      - RestaurantContainer
+          - RestaurantCard
+    ##  Footer Component
+      - Copyright
+      - Links
+      - Address
+      - Contact
+ -->
+
+ ## props - [properties] - Just normal argument of a component
+
+ we can make dymanic card by using props 
+ - for checking backend data need to add extension in chrome like - JSON-viewer Extension
+  - open inspect -> click on network -> refresh chrome Browser -> [preview & headers] & left hand side API data is there - for swiggy
+    - https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.61450&lng=77.30630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
+  - why API data is to complex because of security
+  
+  # config-driven-UI - [Frontend System design Interview]
+    - controlling your UI using config, config comes from backend
+    or 
+    - All the UI driven by confign what is config[data]
+
+  other -
+  We had writthen code once for frontend & based on the Backend 0r API Data frontend UI will change that is known as config-driven-UI.
+  Example - if the offer will different from different-different location so from the backend side data offer will come as per the different address so that is know as config-driven-UI
+
+  from the API fetching: name, constfortwo, avgrating
+
+  # Rest.Cloundenary.com: [CDN] - Put all the images are host on CDN
+   - this is CDN where all the images are kept
+
+  # unique key property [keys] -
+    - always have a unique key.
+    - Menas that each of the list items should have own unique key
+  ## Why Unique ID need to define in React - [keys]
+    Example - if we have 54 Restaurant card & we did't provide unique id, if user add new card so React is not aware about newly added card in which position so it'll rendered all the Cards
+    - for avoid the rendering we need to provide uniue-id for each cards so React will only check new card & render it without doing changes in other cards
+    - React doesn't uniquly indentifies the things so that is a reason to add unique key
+
+  ## React index as key bad practice -
+    - https://legacy.reactjs.org/docs/lists-and-keys.html
+    - https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/
+
+  ## note - // not using keys (not acceptable) <<<<< index as key <<<<<<<<<<< unique id (best practice)
+
+  Swiggy api - https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.61450&lng=77.30630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
+
+
+# Lecture - 05 - React Hooks -
+   Restured - 
+    Create src - source code - 
+   - never keeps hardcode in the file so keep seperate file [config, utils]
+
+  ## 2 ways to export & import 
+    1. - # default export & import  - 
+       - export default Component
+      - import Component from "path"
+   2. - # named export - can't export twice or multiple by using default so use name export
+      - export const Component
+      - import {Component} from "path"
+
+    Home Work -
+      - Can I do both export?
+
+    Top rated restaurnt -
+    - more than 4 stars
+
+  ## Exent Handlers -
+    - 
+  ## DOM Manipulation -
+
+  ## React Hooks -
+  - Just a normal JS Functions [Written by Facebook developers, written inside react utility functions]
+    - Most important 2 hooks -
+      - useState()
+      - useEffect()
+
+# Whenever a state variable changes react will re-renderd the components.
