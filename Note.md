@@ -51,7 +51,7 @@ Every dependecies has their own package.json -> this is known an transitive depe
  Answer - Yes, maitaining exact version of dependecies during  development & production
 - if we have package.json then we can create node_modules 
 
-# Browser Support make Appliocation  [https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z]
+# Browser Support make Application  [https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z]
 - node modules have browserlist that should add into the Package.json & pass multiple browser support version
 in package.json -
 100% it'll  work in 2 below configuration & for other version may it'll work or not
@@ -197,3 +197,48 @@ in package.json -
       - useEffect()
 
 # Whenever a state variable changes react will re-renderd the components.
+
+## Lecture - 06 -
+  - Two ways to render the UI 
+   1. Page load ===>>> API call (500 MS) ===>>>Render page
+   2. Page load ===>>> Render ===>>> API call ===>>>Render page
+    - we are follwing 2nd approach for API call.
+
+  # useEffect Hooks -
+    - Just like a normal function & it's taking two arguments 
+      1. callback function 
+      2. dependency arrays
+       
+        useEffect(()=>{
+          console.log("UseEffect call")
+        }, [])
+        - when the body function render, redner it, as soon as render cycle finish then callback function will call
+
+  # fetch() - provided by Browsers not javaScript
+  using .then & catch will use async & await
+  - we call Swiggy API but issue was in CORS then we added CORD chrome extension now issue to resolved they provided the ORIGIN data
+
+## Shimmer UI - 
+  - we can show a fake page util exactly data is not there.. Like - Fake card, or Loading screen.
+  everybody using shimmer UI like - Swiggy & Youtube
+## CORS chrome extension -
+  - Peovide a access of external API like swiggy, we need to add extension
+
+## Conditional rednering -
+  - Runner code based of the logic is known as conditional rendering
+  - We ahd used ternary operator
+
+## important Note -
+  - when every we enter search test on every key word body component will re-rendered whole components
+  - When ever states variable updates React trigger Reconcillition cycle or re-rendered component.
+  - When we enter any key in the input box then every key press All the component will re-rendered that is known as DOM manipulation.
+
+## React Fiber -
+  - New reconciliation process to effeciately render the web pages.
+  or 
+  - In the React fiber it'll update DOM only the portion is required, It'll not re-rendered all the Time.
+
+## Capital & uppercarse problem -
+  - make it to lower case whatever random order search it'll not give an issue.
+
+## 
