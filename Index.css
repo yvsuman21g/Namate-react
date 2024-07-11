@@ -10,9 +10,9 @@
     display: flex;
     list-style: none;
     padding: 28px 52px;
-    font-size: 24px;
+    font-size: 20px;
 }
-.nav-items > ul > li{
+li{
     padding: 10px;
     margin: 10px;
 }

@@ -241,4 +241,12 @@ in package.json -
 ## Capital & uppercarse problem -
   - make it to lower case whatever random order search it'll not give an issue.
 
-## 
+## chrome pluggin which is known as (JSON viewer)
+## CORS Pluggin is used for external live API of swiggy like
+## optional chaining
+## fetch post call
+
+## CORS plugin -
+  - https://corsproxy.io/?
+  - We can't directy access swiggy api from the fetch methods we have to use -
+    link - https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.61450&lng=77.30630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
