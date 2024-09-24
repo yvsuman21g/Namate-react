@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestrauntCard";
+import RestaurantCard, {withPromotedLabel} from "./RestrauntCard";
 import '../../Index.css'
 import { Component, useEffect, useState } from 'react';
 import ShimmerUI from "./ShimmerUI";
@@ -14,7 +14,10 @@ const Body = () => {
 
   const [searchText, setSeachText] = useState("");
 
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
   console.log("Component redered");
+  console.log("Body Rendered", listOfRestaurant);
 
 
   useEffect(() => {
@@ -56,9 +59,10 @@ const Body = () => {
               const filterredRestaurant = listOfRestaurant.filter((restaurant) => restaurant.info.name.toLowerCase().includes(searchText));
               setFilterRestaurant(filterredRestaurant);
             }}>
+              
             Search</button>
         </div>
-        <div className="m-2 p-2 pt-6">
+        <div className="m-2 p-2 pt-6 text-center">
         <div className='filter-btn px-4 py-2 bg-slate-300 rounded-lg hover:bg-green-300'
           onClick={() => {
             // Top rated Restaurant [rating 4]
@@ -71,14 +75,16 @@ const Body = () => {
         </div>
         </div>
       </div>
-      <div className='flex flex-wrap'>
+      <div className='flex flex-wrap ml-20'>
         {
           filterRestaurant?.length &&
           filterRestaurant.map((restaurant) =>
             <Link key={restaurant?.info?.id} to={"/restaurants/" + restaurant?.info?.id}>
-              <RestaurantCard
-                resData={restaurant} /></Link>
-            // <RestaurantCard  resData={restaurant}/>
+              {
+                restaurant?.data?.promoted ? <RestaurantCardPromoted resData={restaurant}/> : <RestaurantCard
+                resData={restaurant} />
+              }
+              </Link>
           )
 
         }
